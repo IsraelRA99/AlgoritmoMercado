@@ -8,14 +8,10 @@ Original file is located at
 
 ### **Librerías Principales para el Funcionamiento del Algoritmo**
 """
+!pip install yfinance
+!pip install yahoo-finance
+!pip install yahoofinancials
 
-pip install yfinance
-
-pip install yahoo-finance
-
-pip install yahoofinancials
-
-# Commented out IPython magic to ensure Python compatibility.
 # Manipulación y tratamiento de Datos
 import numpy as np
 import pandas as pd
@@ -163,19 +159,6 @@ X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 prediccion = modelo_LSTM.predict(X_test)
 #E invertimos la normalización o escalado para poder ver el futuro precio
 prediccion = scaler.inverse_transform(prediccion)
-
-#Predecimos los valores agrupados del testeo para que nos muestre el "siguiente valor"
-#prediccion2 = modelo_LSTM.predict(X_test)
-#Agrupamos los time_step primeros valores que no serán predecidos para la graficación
-#prediccion = []
-#for i in range (time_step):
-#    prediccion.append(test_data_escalado[i, 0])
-#for i in range (len(prediccion2)):
-#    prediccion.append(prediccion2[i, 0])
-#prediccion = np.array(prediccion)
-#prediccion = np.reshape(prediccion, (prediccion.shape[0], 1))
-#E invertimos la normalización o escalado para poder ver el futuro precio
-#prediccion = scaler.inverse_transform(prediccion)
 
 #Agrupamos los valores predecidos a los datos del testeo para compararlos
 test_data['Predicciones_LSTM'] = prediccion
