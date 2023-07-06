@@ -8,9 +8,9 @@ Original file is located at
 
 ### **Librerías Principales para el Funcionamiento del Algoritmo**
 """
-!pip install yfinance
-!pip install yahoo-finance
-!pip install yahoofinancials
+pip install yfinance
+pip install yahoo-finance
+pip install yahoofinancials
 
 # Manipulación y tratamiento de Datos
 import numpy as np
